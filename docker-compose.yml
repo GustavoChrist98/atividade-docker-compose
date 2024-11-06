@@ -1,5 +1,20 @@
-version: '1'
+# version: '1'
 
 services:
-  app:
-    image:
+  db:
+    image: mysql:5.7
+    volumes:
+    - /var/llib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=dev
+      - MYSQL_DATABASE=dev
+  
+  php:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./www:/var/www/html
+    links:
+      - db
