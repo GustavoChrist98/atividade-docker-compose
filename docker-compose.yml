@@ -2,19 +2,31 @@
 
 services:
   db:
-    image: mysql:5.7
+    container_name: db-container
+    build: 
+      context: .
+      dockerfile: Dockerfiles/mysql/Dockerfile
     volumes:
-    - /var/llib/mysql
+    - /var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=dev
       - MYSQL_DATABASE=dev
-  
-  php:
-    build: .
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=dev
     ports:
-      - "80:80"
+      - "3306:3306"
+  php:
+    container_name: php-container
+    build: 
+      context: .
+      dockerfile: Dockerfiles/php/Dockerfile
+    ports:
+      - "8080:80"
       - "443:443"
     volumes:
       - ./www:/var/www/html
+    # depends_on:
+    #   db:
+    #     condition: service_completed_successfully
     links:
       - db
