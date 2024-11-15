@@ -1,5 +1,12 @@
 # SISTEMAS DISTRIBUÍDOS – Trabalho sobre Contêineres
 
+## Componentes
+
+- [Cleverton dos Santos Liltk](https://github.com/1tsRetr0) - Ciência da Computação
+- [Gustavo de Oliveira Christ](https://github.com/GustavoChrist98) - Ciência da Computação
+- [Lucio Ewald do Nascimento](https://github.com/lucioew28) - Ciência da Computação
+- [Jhony Rodrigues  de Souza](https://github.com/jhonyrdesouza) - Sistemas de Informação
+
 Configurar um ambiente baseado em contêineres Docker com a seguinte especificação:
   - 1 contêiner com um servidor web e o sistema PHP disponibilizado em anexo.
   - 1 contêiner com um servidor de banco de dados MySQL com a estrutura de dados
