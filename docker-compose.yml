@@ -2,21 +2,16 @@
 
 services:
   db:
-    container_name: db-container
+    # container_name: db-container
     build: 
       context: .
       dockerfile: Dockerfiles/mysql/Dockerfile
     volumes:
     - /var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=dev
-      - MYSQL_DATABASE=dev
-      - MYSQL_USER=dev
-      - MYSQL_PASSWORD=dev
     ports:
       - "3306:3306"
   php:
-    container_name: php-container
+    # container_name: php-container
     build: 
       context: .
       dockerfile: Dockerfiles/php/Dockerfile
